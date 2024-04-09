@@ -137,7 +137,7 @@ class TwoFactorController
         $g2fa = new G2fa();
         $url = $g2fa->getQRCodeUrl($company, $holder, $secret);
 
-        return self::generateGoogleQRCodeUrl('https://chart.googleapis.com/', 'chart', 'chs='.$size.'x'.$size.'&chld=M|0&cht=qr&chl=', $url);
+        return self::generateGoogleQRCodeUrl('https://quickchart.io/', 'qr', 'chs='.$size.'x'.$size.'&chld=M|0&cht=qr&text=', $url);
     }
 
     public static function generateGoogleQRCodeUrl($domain, $page, $queryParameters, $qrCodeUrl)
